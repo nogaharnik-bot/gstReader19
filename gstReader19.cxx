@@ -320,6 +320,8 @@ void gstReader19()
     Long64_t nEntries = Root_Tree3->GetEntries();
     map<tuple<int,int,int,int,int,int,int,int>, int> topoCount;
 
+    cout<<"Total number of events: " << nEntries << endl;
+
     for (Long64_t i = 0; i < nEntries; ++i) {
         if (i % 1000000 == 0)
             cout <<"Processing event" << i <<" /" << nEntries << endl;
