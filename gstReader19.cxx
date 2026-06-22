@@ -1,5 +1,6 @@
 #include <TFile.h>
 #include <TTree.h>
+#include <TChain.h>
 #include <TLegend.h>
 #include <TH1D.h>
 #include <TStyle.h>
@@ -145,21 +146,22 @@ void DrawTopologies(const vector<vector<TH1D*>>& histos,
 
 void gstReader19()
 {
-    const string File_Path ="";
-    const string File_Name ="11_1000060120_EM_5_98636GeV_G18_02a_00_000_Q2_0_4.gst.root";
-    const string File_TTree_Name ="gst";
-    const string File_Path_and_Name = File_Path + File_Name;
+    const string File_Path = "/pnfs/genie/persistent/users/asportes/2N_Analysis_Samples/C12/GEM21_11a_00_000/5986MeV_Q2_0_40/master-routine_validation_01-eScattering";
+    const string File_TTree_Name = "gst";
+    const vector<string> File_Names = {
+        "e_on_1000060120_5986MeV_*.gst.root"
+        // add more ROOT file names here
+    };
 
-    TFile* Root_File3 = TFile::Open(File_Path_and_Name.c_str());
-    if (!Root_File3 || Root_File3->IsZombie()) {
-        cerr <<"Error opening file:" << File_Path_and_Name << endl;
-        return;
+    TChain* Root_Tree3 = new TChain(File_TTree_Name.c_str());
+    int filesAdded = 0;
+    for (const auto& fileName : File_Names) {
+        const string fullPath = File_Path + fileName;
+        filesAdded += Root_Tree3->Add(fullPath.c_str());
     }
 
-    TTree* Root_Tree3 = static_cast<TTree*>(Root_File3->Get(File_TTree_Name.c_str()));
-    if (!Root_Tree3) {
-        cerr <<"Error getting tree:" << File_TTree_Name << endl;
-        Root_File3->Close();
+    if (filesAdded == 0) {
+        cerr << "Error adding files to TChain for tree: " << File_TTree_Name << endl;
         return;
     }
 
@@ -387,6 +389,4 @@ void gstReader19()
     DrawTopologies(histos4, topos4,"1nN1nK","1nN 1nK", 10, true);
     DrawTopologies(histos5, topos5,"1nN2nK","1nN 2nK", 10, false);
     DrawTopologies(histos5, topos5,"1nN2nK","1nN 2nK", 10, true);
-
-    Root_File3->Close();
 }
