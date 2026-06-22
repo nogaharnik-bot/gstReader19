@@ -149,7 +149,12 @@ void gstReader19()
     const string File_Path = "/pnfs/genie/persistent/users/asportes/2N_Analysis_Samples/C12/GEM21_11a_00_000/5986MeV_Q2_0_40/master-routine_validation_01-eScattering";
     const string File_TTree_Name = "gst";
     const vector<string> File_Names = {
-        "e_on_1000060120_5986MeV_*.gst.root"
+        "e_on_1000060120_5986MeV_1.gst.root"
+        "e_on_1000060120_5986MeV_2.gst.root"
+        "e_on_1000060120_5986MeV_3.gst.root"
+        "e_on_1000060120_5986MeV_4.gst.root"
+        "e_on_1000060120_5986MeV_5.gst.root"
+        // "e_on_1000060120_5986MeV_*.gst.root"
         // add more ROOT file names here
     };
 
