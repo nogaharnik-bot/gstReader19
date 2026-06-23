@@ -151,11 +151,7 @@ void gstReader19()
     const string File_Path = "/pnfs/genie/persistent/users/asportes/2N_Analysis_Samples/C12/GEM21_11a_00_000/5986MeV_Q2_0_40/master-routine_validation_01-eScattering/";
     const string File_TTree_Name = "gst";
     const vector<string> File_Names = {
-        "e_on_1000060120_5986MeV_1.gst.root",
-        "e_on_1000060120_5986MeV_2.gst.root",
-        "e_on_1000060120_5986MeV_3.gst.root",
-        "e_on_1000060120_5986MeV_4.gst.root",
-        "e_on_1000060120_5986MeV_5.gst.root"
+        "e_on_1000060120_5986MeV_1*.gst.root",
         // "e_on_1000060120_5986MeV_*.gst.root"
         // add more ROOT file names here
     };
@@ -309,6 +305,37 @@ void gstReader19()
         {"topo_2_1_1_1_0_1_1_0", "2p 1n 1#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 2, 1, 1, 1, 0, 1, 1, 0},
         {"topo_0_1_1_0_0_0_1_1", "1n 1#pi^{+} 1K^{-} 1K^{0}", 0, 1, 1, 0, 0, 0, 1, 1}
     };
+
+    vector<Topology> topos6 = {
+        {"1p0n0pip1pim", "1p 0n 0#pi^{+} 1#pi^{-}", 1, 0, 0, 1, 0, 0, 0, 0},
+        {"1p1n0pip1pim", "1p 1n 0#pi^{+} 1#pi^{-}", 1, 1, 0, 1, 0, 0, 0, 0},
+        {"1p2n0pip1pim", "1p 2n 0#pi^{+} 1#pi^{-}", 1, 2, 0, 1, 0, 0, 0, 0},
+        {"1p0n0pip1pim1kp", "1p 0n 0#pi^{+} 1#pi^{-} 1K^{+}", 1, 0, 0, 1, 0, 1, 0, 0},
+        {"1p0n0pip1pim1k0", "1p 0n 0#pi^{+} 1#pi^{-} 1K^{0}", 1, 0, 0, 1, 0, 0, 0, 1},
+        {"1p3n0pip1pim", "1p 3n 0#pi^{+} 1#pi^{-}", 1, 3, 0, 1, 0, 0, 0, 0},
+        {"1p1n0pip1pim1kp", "1p 1n 0#pi^{+} 1#pi^{-} 1K^{+}", 1, 1, 0, 1, 0, 1, 0, 0},
+        {"1p4n0pip1pim", "1p 4n 0#pi^{+} 1#pi^{-}", 1, 4, 0, 1, 0, 0, 0, 0},
+        {"1p0n0pip1pim1kp1km", "1p 0n 0#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 1, 0, 0, 1, 0, 1, 1, 0},
+        {"1p5n0pip1pim", "1p 5n 0#pi^{+} 1#pi^{-}", 1, 5, 0, 1, 0, 0, 0, 0},
+        {"1p1n0pip1pim1k0", "1p 1n 0#pi^{+} 1#pi^{-} 1K^{0}", 1, 1, 0, 1, 0, 0, 0, 1},
+        {"1p2n0pip1pim1kp", "1p 2n 0#pi^{+} 1#pi^{-} 1K^{+}", 1, 2, 0, 1, 0, 1, 0, 0},
+        {"1p1n0pip1pim1kp1km", "1p 1n 0#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 1, 1, 0, 1, 0, 1, 1, 0},
+        {"1p1n1pip", "1p 1n 1#pi^{+}", 1, 1, 1, 0, 0, 0, 0, 0},
+        {"1p2n1pip", "1p 2n 1#pi^{+}", 1, 2, 1, 0, 0, 0, 0, 0},
+        {"1p3n1pip", "1p 3n 1#pi^{+}", 1, 3, 1, 0, 0, 0, 0, 0},
+        {"1p4n1pip", "1p 4n 1#pi^{+}", 1, 4, 1, 0, 0, 0, 0, 0},
+        {"1p5n1pip", "1p 5n 1#pi^{+}", 1, 5, 1, 0, 0, 0, 0, 0},
+        {"1p6n1pip", "1p 6n 1#pi^{+}", 1, 6, 1, 0, 0, 0, 0, 0},
+        {"1p1n1pip1k0", "1p 1n 1#pi^{+} 1K^{0}", 1, 1, 1, 0, 0, 0, 0, 1},
+        {"1p0n1pip1k0", "1p 0n 1#pi^{+} 1K^{0}", 1, 0, 1, 0, 0, 0, 0, 1},
+        {"1p7n1pip", "1p 7n 1#pi^{+}", 1, 7, 1, 0, 0, 0, 0, 0},
+        {"1p2n1pip1k0", "1p 2n 1#pi^{+} 1K^{0}", 1, 2, 1, 0, 0, 0, 0, 1},
+        {"1p0n1pip1km1k0", "1p 0n 1#pi^{+} 1K^{-} 1K^{0}", 1, 0, 1, 0, 0, 0, 1, 1},
+        {"1p1n1pip1kp1km", "1p 1n 1#pi^{+} 1K^{+} 1K^{-}", 1, 1, 1, 0, 0, 1, 1, 0},
+        {"1p2n1pip1kp1km", "1p 2n 1#pi^{+} 1K^{+} 1K^{-}", 1, 2, 1, 0, 0, 1, 1, 0},
+        {"1p3n1pip1k0", "1p 3n 1#pi^{+} 1K^{0}", 1, 3, 1, 0, 0, 0, 0, 1},
+        {"1p2n1pip1kp", "1p 2n 1#pi^{+} 1K^{+}", 1, 2, 1, 0, 0, 1, 0, 0}
+    };
     
 
 
@@ -317,6 +344,7 @@ void gstReader19()
     auto histos3 = MakeHistoSet(topos3);
     auto histos4 = MakeHistoSet(topos4);
     auto histos5 = MakeHistoSet(topos5);
+    auto histos6 = MakeHistoSet(topos6);
 
 
     Long64_t nEntries = Root_Tree3->GetEntries();
@@ -385,6 +413,11 @@ void gstReader19()
                 FillHists(histos5[t], et, theta, Q2, W);
         }
 
+        for (size_t t = 0; t < topos6.size(); ++t) {
+            if (MatchTopology(topos6[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
+                FillHists(histos6[t], et, theta, Q2, W);
+        }
+
     }
     
 
@@ -398,4 +431,6 @@ void gstReader19()
     DrawTopologies(histos4, topos4,"1nN1nK","1nN 1nK", 10, true);
     DrawTopologies(histos5, topos5,"1nN2nK","1nN 2nK", 10, false);
     DrawTopologies(histos5, topos5,"1nN2nK","1nN 2nK", 10, true);
+    DrawTopologies(histos6, topos6,"P+pi","P+pi", 10, false);
+    DrawTopologies(histos6, topos6,"P+pi","P+pi", 10, true);
 }
