@@ -51,10 +51,8 @@ bool MatchTopology(const Topology& tp,
     if (tp.nNeutron >= 0 && nNeutron != tp.nNeutron) return false;
     if (tp.nPip >= 0 && nPip != tp.nPip) return false;
     if (tp.nPim >= 0 && nPim != tp.nPim) return false;
-    if (tp.nPi0 >= 0 && nPi0 != tp.nPi0) return false;
     if (tp.nKp >= 0 && nKp != tp.nKp) return false;
     if (tp.nKm >= 0 && nKm != tp.nKm) return false;
-    if (tp.nK0 >= 0 && nK0 != tp.nK0) return false;
     return true;
 }
 
