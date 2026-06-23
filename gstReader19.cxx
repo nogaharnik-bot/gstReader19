@@ -10,6 +10,7 @@
 #include <TCanvas.h>
 #include <TString.h>
 #include <map>
+#include <tuple>
 
 #include <iostream>
 #include <vector>
@@ -448,7 +449,7 @@ void gstReader19()
     auto histos5 = MakeHistoSet(topos5);
     auto histos6 = MakeHistoSet(topos6);
     auto histos7 = MakeHistoSet(topos7);
-    auto histos7_qel = MakeHistoSet(topos7);
+    auto histos7_qel = MakeHistoSet(topos7, "_qel");
     auto histos8 = MakeHistoSet(topos8);
     auto histos9 = MakeHistoSet(topos9);
     auto histos10 = MakeHistoSet(topos10);
@@ -459,7 +460,7 @@ void gstReader19()
     cout<<"Total number of events: " << nEntries << endl;
 
     for (Long64_t i = 0; i < nEntries; ++i) {
-        if (i+1 % 1000000 == 0)
+        if ((i+1) % 1000000 == 0)
             cout <<"Processing event " << i <<" /" << nEntries << endl;
 
         Root_Tree3->GetEntry(i);
