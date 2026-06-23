@@ -518,8 +518,6 @@ void gstReader19()
         for (size_t t = 0; t < topos6.size(); ++t) {
             if (MatchTopology(topos6[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                 FillHists(histos6[t], et, theta, Q2, W);
-            if (MatchTopology(topos6[t], nProtonNoThresh, nNeutronNoThresh, nPipNoThresh, nPimNoThresh, nPi0NoThresh, nKpNoThresh, nKmNoThresh, nK0NoThresh))
-                FillHists(histos6NoThresh[t], et, theta, Q2, W);
         }
 
         for (size_t t = 0; t < topos7.size(); ++t) {
