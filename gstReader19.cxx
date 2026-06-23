@@ -9,6 +9,8 @@
 #include <TMath.h>
 #include <TCanvas.h>
 #include <TString.h>
+#include <TSystem.h>
+#include <algorithm>
 #include <map>
 #include <tuple>
 
@@ -64,12 +66,12 @@ void FillHists(vector<TH1D*>& histos, double et, double theta, double Q2, double
     histos[3]->Fill(W);
 }
 
-vector<vector<TH1D*>> MakeHistoSet(const vector<Topology>& list, const TString&  = "")
+vector<vector<TH1D*>> MakeHistoSet(const vector<Topology>& list, const TString& suffix = "")
 {
     vector<vector<TH1D*>> histos;
     histos.reserve(list.size());
     for (const auto& tp : list)
-        histos.push_back(MakeHists(tp.name, tp.title,));
+        histos.push_back(MakeHists(tp.name + suffix, tp.title));
     return histos;
 }
 
@@ -572,4 +574,10 @@ void gstReader19()
     DrawTopologies(histos9, topos9,"1nKm","1nK^{-}", 10, true, "6GeV");
     DrawTopologies(histos10, topos10,"1nKp1nKm","1nK^{+} 1nK^{-}", 10, false, "6GeV");
     DrawTopologies(histos10, topos10,"1nKp1nKm","1nK^{+} 1nK^{-}", 10, true, "6GeV");
+}
+
+int main(int argc, char** argv)
+{
+    gstReader19();
+    return 0;
 }
