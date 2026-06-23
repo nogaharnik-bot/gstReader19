@@ -29,13 +29,13 @@ struct Topology {
     int nKm;
 };
 
-vector<TH1D*> MakeHists(const TString& name, const TString& title, const TString& suffix = "")
+vector<TH1D*> MakeHists(const TString& name, const TString& title)
 {
     return {
-        new TH1D("et_" + name + suffix,    title +";Energy Transfer [GeV];Events", 100, 0, 6),
-        new TH1D("theta_" + name + suffix, title +";#theta_{e} [rad];Events",      100, 0, 0.5),
-        new TH1D("Q2_" + name + suffix,    title +";Q^{2} [GeV^{2}];Events",       100, 0, 1),
-        new TH1D("W_" + name + suffix,     title +";W [GeV/c^{2}];Events",         100, 0, 3.5)
+        new TH1D("et_" + name,    title +";Energy Transfer [GeV];Events", 100, 0, 6),
+        new TH1D("theta_" + name, title +";#theta_{e} [rad];Events",      100, 0, 0.5),
+        new TH1D("Q2_" + name,    title +";Q^{2} [GeV^{2}];Events",       100, 0, 1),
+        new TH1D("W_" + name,     title +";W [GeV/c^{2}];Events",         100, 0, 3.5)
     };
 }
 
@@ -51,8 +51,10 @@ bool MatchTopology(const Topology& tp,
     if (tp.nNeutron >= 0 && nNeutron != tp.nNeutron) return false;
     if (tp.nPip >= 0 && nPip != tp.nPip) return false;
     if (tp.nPim >= 0 && nPim != tp.nPim) return false;
+    if (tp.nPi0 >= 0 && nPi0 != tp.nPi0) return false;
     if (tp.nKp >= 0 && nKp != tp.nKp) return false;
     if (tp.nKm >= 0 && nKm != tp.nKm) return false;
+    if (tp.nK0 >= 0 && nK0 != tp.nK0) return false;
     return true;
 }
 
@@ -64,12 +66,12 @@ void FillHists(vector<TH1D*>& histos, double et, double theta, double Q2, double
     histos[3]->Fill(W);
 }
 
-vector<vector<TH1D*>> MakeHistoSet(const vector<Topology>& list, const TString& suffix = "")
+vector<vector<TH1D*>> MakeHistoSet(const vector<Topology>& list, const TString&  = "")
 {
     vector<vector<TH1D*>> histos;
     histos.reserve(list.size());
     for (const auto& tp : list)
-        histos.push_back(MakeHists(tp.name, tp.title, suffix));
+        histos.push_back(MakeHists(tp.name, tp.title,));
     return histos;
 }
 
