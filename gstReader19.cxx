@@ -198,7 +198,55 @@ void gstReader19()
 
     // 1kp //
     vector<Topology> topos1 = {
-        
+        {"topo_0_0_0_0_1_0", "0p 0n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 0, 0, 0, 0, 1, 0},
+        {"topo_0_0_0_1_1_0", "0p 0n 0#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 0, 0, 0, 1, 1, 0},
+        {"topo_0_0_1_1_1_0", "0p 0n 1#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 0, 0, 1, 1, 1, 0},
+        {"topo_0_1_0_0_1_0", "0p 1n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 0, 1, 0, 0, 1, 0},
+        {"topo_1_0_0_1_1_0", "1p 0n 0#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 1, 0, 0, 1, 1, 0},
+        {"topo_0_1_1_1_1_0", "0p 1n 1#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 0, 1, 1, 1, 1, 0},
+        {"topo_0_1_0_1_1_0", "0p 1n 0#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 0, 1, 0, 1, 1, 0},
+        {"topo_1_1_0_0_1_0", "1p 1n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 1, 1, 0, 0, 1, 0},
+        {"topo_1_0_0_0_1_0", "1p 0n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 1, 0, 0, 0, 1, 0},
+        {"topo_1_1_0_1_1_0", "1p 1n 0#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 1, 1, 0, 1, 1, 0},
+        {"topo_2_1_0_0_1_0", "2p 1n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 2, 1, 0, 0, 1, 0},
+        {"topo_0_0_1_2_1_0", "0p 0n 1#pi^{+} 2#pi^{-} 1K^{+} 0K^{-}", 0, 0, 1, 2, 1, 0},
+        {"topo_0_2_0_0_1_0", "0p 2n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 0, 2, 0, 0, 1, 0},
+        {"topo_2_1_0_1_1_0", "2p 1n 0#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 2, 1, 0, 1, 1, 0},
+        {"topo_0_1_1_2_1_0", "0p 1n 1#pi^{+} 2#pi^{-} 1K^{+} 0K^{-}", 0, 1, 1, 2, 1, 0},
+        {"topo_1_1_1_1_1_0", "1p 1n 1#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 1, 1, 1, 1, 1, 0},
+        {"topo_1_0_1_1_1_0", "1p 0n 1#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 1, 0, 1, 1, 1, 0},
+        {"topo_0_1_1_0_1_0", "0p 1n 1#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 0, 1, 1, 0, 1, 0},
+        {"topo_0_2_1_1_1_0", "0p 2n 1#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 0, 2, 1, 1, 1, 0},
+        {"topo_2_0_0_1_1_0", "2p 0n 0#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 2, 0, 0, 1, 1, 0},
+        {"topo_1_2_0_0_1_0", "1p 2n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 1, 2, 0, 0, 1, 0},
+        {"topo_0_2_1_0_1_0", "0p 2n 1#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 0, 2, 1, 0, 1, 0},
+        {"topo_1_0_1_2_1_0", "1p 0n 1#pi^{+} 2#pi^{-} 1K^{+} 0K^{-}", 1, 0, 1, 2, 1, 0},
+        {"topo_2_2_0_0_1_0", "2p 2n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 2, 2, 0, 0, 1, 0},
+        {"topo_1_2_1_1_1_0", "1p 2n 1#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 1, 2, 1, 1, 1, 0},
+        {"topo_1_1_1_2_1_0", "1p 1n 1#pi^{+} 2#pi^{-} 1K^{+} 0K^{-}", 1, 1, 1, 2, 1, 0},
+        {"topo_2_1_1_1_1_0", "2p 1n 1#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 2, 1, 1, 1, 1, 0},
+        {"topo_1_2_0_1_1_0", "1p 2n 0#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 1, 2, 0, 1, 1, 0},
+        {"topo_1_0_0_2_1_0", "1p 0n 0#pi^{+} 2#pi^{-} 1K^{+} 0K^{-}", 1, 0, 0, 2, 1, 0},
+        {"topo_3_1_0_1_1_0", "3p 1n 0#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 3, 1, 0, 1, 1, 0},
+        {"topo_2_2_0_1_1_0", "2p 2n 0#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 2, 2, 0, 1, 1, 0},
+        {"topo_1_3_0_0_1_0", "1p 3n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 1, 3, 0, 0, 1, 0},
+        {"topo_0_3_0_0_1_0", "0p 3n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 0, 3, 0, 0, 1, 0},
+        {"topo_2_2_1_1_1_0", "2p 2n 1#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 2, 2, 1, 1, 1, 0},
+        {"topo_2_3_0_0_1_0", "2p 3n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 2, 3, 0, 0, 1, 0},
+        {"topo_0_2_0_1_1_0", "0p 2n 0#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 0, 2, 0, 1, 1, 0},
+        {"topo_0_0_2_2_1_0", "0p 0n 2#pi^{+} 2#pi^{-} 1K^{+} 0K^{-}", 0, 0, 2, 2, 1, 0},
+        {"topo_1_2_1_0_1_0", "1p 2n 1#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 1, 2, 1, 0, 1, 0},
+        {"topo_0_3_1_0_1_0", "0p 3n 1#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 0, 3, 1, 0, 1, 0},
+        {"topo_3_2_0_0_1_0", "3p 2n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 3, 2, 0, 0, 1, 0},
+        {"topo_2_0_0_2_1_0", "2p 0n 0#pi^{+} 2#pi^{-} 1K^{+} 0K^{-}", 2, 0, 0, 2, 1, 0},
+        {"topo_3_1_0_0_1_0", "3p 1n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 3, 1, 0, 0, 1, 0},
+        {"topo_0_3_1_1_1_0", "0p 3n 1#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 0, 3, 1, 1, 1, 0},
+        {"topo_0_4_0_0_1_0", "0p 4n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 0, 4, 0, 0, 1, 0},
+        {"topo_2_1_1_2_1_0", "2p 1n 1#pi^{+} 2#pi^{-} 1K^{+} 0K^{-}", 2, 1, 1, 2, 1, 0},
+        {"topo_3_2_0_1_1_0", "3p 2n 0#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 3, 2, 0, 1, 1, 0},
+        {"topo_1_3_1_1_1_0", "1p 3n 1#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 1, 3, 1, 1, 1, 0},
+        {"topo_0_1_2_1_1_0", "0p 1n 2#pi^{+} 1#pi^{-} 1K^{+} 0K^{-}", 0, 1, 2, 1, 1, 0},
+        {"topo_1_4_0_0_1_0", "1p 4n 0#pi^{+} 0#pi^{-} 1K^{+} 0K^{-}", 1, 4, 0, 0, 1, 0}
     };
 
     // 1p + 1k //
@@ -360,7 +408,37 @@ void gstReader19()
 
     // 1km //
     vector<Topology> topos9 = {
-        
+        {"topo_1_0_1_0_0_1", "1p 0n 1#pi^{+} 0#pi^{-} 0K^{+} 1K^{-}", 1, 0, 1, 0, 0, 1},
+        {"topo_1_0_0_0_0_1", "1p 0n 0#pi^{+} 0#pi^{-} 0K^{+} 1K^{-}", 1, 0, 0, 0, 0, 1},
+        {"topo_0_1_1_0_0_1", "0p 1n 1#pi^{+} 0#pi^{-} 0K^{+} 1K^{-}", 0, 1, 1, 0, 0, 1},
+        {"topo_1_1_1_0_0_1", "1p 1n 1#pi^{+} 0#pi^{-} 0K^{+} 1K^{-}", 1, 1, 1, 0, 0, 1},
+        {"topo_0_1_2_0_0_1", "0p 1n 2#pi^{+} 0#pi^{-} 0K^{+} 1K^{-}", 0, 1, 2, 0, 0, 1}
+    };
+
+    // 1kp 1km //
+    vector<Topology> topos10 = {
+        {"topo_1_0_0_0_1_1", "1p 0n 0#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 1, 0, 0, 0, 1, 1},
+        {"topo_0_1_0_0_1_1", "0p 1n 0#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 0, 1, 0, 0, 1, 1},
+        {"topo_0_1_1_0_1_1", "0p 1n 1#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 0, 1, 1, 0, 1, 1},
+        {"topo_1_1_0_0_1_1", "1p 1n 0#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 1, 1, 0, 0, 1, 1},
+        {"topo_1_0_0_1_1_1", "1p 0n 0#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 1, 0, 0, 1, 1, 1},
+        {"topo_1_0_1_1_1_1", "1p 0n 1#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 1, 0, 1, 1, 1, 1},
+        {"topo_2_1_0_0_1_1", "2p 1n 0#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 2, 1, 0, 0, 1, 1},
+        {"topo_1_2_0_0_1_1", "1p 2n 0#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 1, 2, 0, 0, 1, 1},
+        {"topo_0_1_1_1_1_1", "0p 1n 1#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 0, 1, 1, 1, 1, 1},
+        {"topo_1_1_1_0_1_1", "1p 1n 1#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 1, 1, 1, 0, 1, 1},
+        {"topo_2_2_0_0_1_1", "2p 2n 0#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 2, 2, 0, 0, 1, 1},
+        {"topo_1_1_1_1_1_1", "1p 1n 1#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 1, 1, 1, 1, 1, 1},
+        {"topo_0_2_1_0_1_1", "0p 2n 1#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 0, 2, 1, 0, 1, 1},
+        {"topo_3_1_0_0_1_1", "3p 1n 0#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 3, 1, 0, 0, 1, 1},
+        {"topo_2_0_0_1_1_1", "2p 0n 0#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 2, 0, 0, 1, 1, 1},
+        {"topo_2_0_0_0_1_1", "2p 0n 0#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 2, 0, 0, 0, 1, 1},
+        {"topo_1_2_1_0_1_1", "1p 2n 1#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 1, 2, 1, 0, 1, 1},
+        {"topo_1_1_0_1_1_1", "1p 1n 0#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 1, 1, 0, 1, 1, 1},
+        {"topo_0_1_2_1_1_1", "0p 1n 2#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 0, 1, 2, 1, 1, 1},
+        {"topo_0_2_0_0_1_1", "0p 2n 0#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 0, 2, 0, 0, 1, 1},
+        {"topo_2_1_1_1_1_1", "2p 1n 1#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 2, 1, 1, 1, 1, 1},
+        {"topo_2_2_1_0_1_1", "2p 2n 1#pi^{+} 0#pi^{-} 1K^{+} 1K^{-}", 2, 2, 1, 0, 1, 1}
     };
 
     auto histos1 = MakeHistoSet(topos1);
@@ -373,9 +451,10 @@ void gstReader19()
     auto histos7_qel = MakeHistoSet(topos7);
     auto histos8 = MakeHistoSet(topos8);
     auto histos9 = MakeHistoSet(topos9);
+    auto histos10 = MakeHistoSet(topos10);
 
     Long64_t nEntries = Root_Tree3->GetEntries();
-    map<tuple<int,int,int,int,int,int,int,int>, int> topoCount;
+    map<tuple<int,int,int,int,int,int>, int> topoCount;
 
     cout<<"Total number of events: " << nEntries << endl;
 
@@ -390,10 +469,8 @@ void gstReader19()
         int nNeutron = 0;
         int nPip = 0;
         int nPim = 0;
-        int nPi0 = 0;
         int nKp = 0;
         int nKm = 0;
-        int nK0 = 0;
 
         for (int j = 0; j < nf; ++j) {
             const bool aboveBaryon = pf[j] > kBaryonMomentumThreshold;
@@ -412,64 +489,68 @@ void gstReader19()
         double Q2 = 2 * gst_Ev * gst_El * (1 - cthl);
         double W = TMath::Sqrt(TMath::Max(0.0, 0.938272 * 0.938272 + 2 * 0.938272 * et - Q2));
 
-        topoCount[{nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0}]++;
+        topoCount[{nProton, nNeutron, nPip, nPim, nKp, nKm}]++;
 
         for (size_t t = 0; t < topos1.size(); ++t) {
-            if (MatchTopology(topos1[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
+            if (MatchTopology(topos1[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                 FillHists(histos1[t], et, theta, Q2, W);
         }
 
         for (size_t t = 0; t < topos2.size(); ++t) {
-            if (MatchTopology(topos2[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
+            if (MatchTopology(topos2[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                 FillHists(histos2[t], et, theta, Q2, W);
         }
 
         for (size_t t = 0; t < topos3.size(); ++t) {
-            if (MatchTopology(topos3[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
+            if (MatchTopology(topos3[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                 FillHists(histos3[t], et, theta, Q2, W);
         }
         for (size_t t = 0; t < topos4.size(); ++t) {
-            if (MatchTopology(topos4[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
+            if (MatchTopology(topos4[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                 FillHists(histos4[t], et, theta, Q2, W);
         }
 
         for (size_t t = 0; t < topos5.size(); ++t) {
-            if (MatchTopology(topos5[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
+            if (MatchTopology(topos5[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                 FillHists(histos5[t], et, theta, Q2, W);
         }
 
         for (size_t t = 0; t < topos6.size(); ++t) {
-            if (MatchTopology(topos6[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
+            if (MatchTopology(topos6[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                 FillHists(histos6[t], et, theta, Q2, W);
         }
 
         for (size_t t = 0; t < topos7.size(); ++t) {
-            if (MatchTopology(topos7[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
+            if (MatchTopology(topos7[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                 FillHists(histos7[t], et, theta, Q2, W);
         }
 
         // Process topos7 only for quasielastic events
         if (qel) {
             for (size_t t = 0; t < topos7.size(); ++t) {
-                if (MatchTopology(topos7[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
+                if (MatchTopology(topos7[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                     FillHists(histos7_qel[t], et, theta, Q2, W);
             }
         }
 
         for (size_t t = 0; t < topos8.size(); ++t) {
-            if (MatchTopology(topos8[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
+            if (MatchTopology(topos8[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                 FillHists(histos8[t], et, theta, Q2, W);
         }
 
         for (size_t t = 0; t < topos9.size(); ++t) {
-            if (MatchTopology(topos9[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
+            if (MatchTopology(topos9[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                 FillHists(histos9[t], et, theta, Q2, W);
+        }
+        for (size_t t = 0; t < topos10.size(); ++t) {
+            if (MatchTopology(topos10[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
+                FillHists(histos10[t], et, theta, Q2, W);
         }
     }
     
 
-    DrawTopologies(histos1, topos1,"K+","K^{+}", 10, false, "6GeV");
-    DrawTopologies(histos1, topos1,"K+","K^{+}", 10, true, "6GeV");
+    DrawTopologies(histos1, topos1,"1nKp","1nK^{+}", 10, false, "6GeV");
+    DrawTopologies(histos1, topos1,"1nKp","1nK^{+}", 10, true, "6GeV");
     DrawTopologies(histos2, topos2,"1nP1nK","1nP 1nK", 10, false, "6GeV");
     DrawTopologies(histos2, topos2,"1nP1nK","1nP 1nK", 10, true, "6GeV");
     DrawTopologies(histos3, topos3,"1nP2nK","1nP 2nK", 10, false, "6GeV");
@@ -486,6 +567,8 @@ void gstReader19()
     DrawTopologies(histos7_qel, topos7,"AllTopologies_QEL","All Topologies (QEL only)", 10, true, "6GeV");
     DrawTopologies(histos8, topos8,"1nP2npi","1nP 2n#pi", 10, false, "6GeV");
     DrawTopologies(histos8, topos8,"1nP2npi","1nP 2n#pi", 10, true, "6GeV");
-    DrawTopologies(histos9, topos9,"1Km","1K^{-}", 10, false, "6GeV");
-    DrawTopologies(histos9, topos9,"1Km","1K^{-}", 10, true, "6GeV");
+    DrawTopologies(histos9, topos9,"1nKm","1nK^{-}", 10, false, "6GeV");
+    DrawTopologies(histos9, topos9,"1nKm","1nK^{-}", 10, true, "6GeV");
+    DrawTopologies(histos10, topos10,"1nKp1nKm","1nK^{+} 1nK^{-}", 10, false, "6GeV");
+    DrawTopologies(histos10, topos10,"1nKp1nKm","1nK^{+} 1nK^{-}", 10, true, "6GeV");
 }
