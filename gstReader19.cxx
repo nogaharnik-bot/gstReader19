@@ -325,7 +325,7 @@ void gstReader19()
     cout<<"Total number of events: " << nEntries << endl;
 
     for (Long64_t i = 0; i < nEntries; ++i) {
-        if (i % 1000000 == 0)
+        if (i+1 % 1000000 == 0)
             cout <<"Processing event" << i <<" /" << nEntries << endl;
 
         Root_Tree3->GetEntry(i);
