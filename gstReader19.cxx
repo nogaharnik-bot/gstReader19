@@ -30,13 +30,13 @@ struct Topology {
     int nK0;
 };
 
-vector<TH1D*> MakeHists(const TString& name, const TString& title)
+vector<TH1D*> MakeHists(const TString& name, const TString& title, const TString& suffix = "")
 {
     return {
-        new TH1D("et_" + name,    title +";Energy Transfer [GeV];Events", 100, 0, 6),
-        new TH1D("theta_" + name, title +";#theta_{e} [rad];Events",      100, 0, 0.5),
-        new TH1D("Q2_" + name,    title +";Q^{2} [GeV^{2}];Events",       100, 0, 1),
-        new TH1D("W_" + name,     title +";W [GeV/c^{2}];Events",         100, 0, 3.5)
+        new TH1D("et_" + name + suffix,    title +";Energy Transfer [GeV];Events", 100, 0, 6),
+        new TH1D("theta_" + name + suffix, title +";#theta_{e} [rad];Events",      100, 0, 0.5),
+        new TH1D("Q2_" + name + suffix,    title +";Q^{2} [GeV^{2}];Events",       100, 0, 1),
+        new TH1D("W_" + name + suffix,     title +";W [GeV/c^{2}];Events",         100, 0, 3.5)
     };
 }
 
@@ -69,12 +69,12 @@ void FillHists(vector<TH1D*>& histos, double et, double theta, double Q2, double
     histos[3]->Fill(W);
 }
 
-vector<vector<TH1D*>> MakeHistoSet(const vector<Topology>& list)
+vector<vector<TH1D*>> MakeHistoSet(const vector<Topology>& list, const TString& suffix = "")
 {
     vector<vector<TH1D*>> histos;
     histos.reserve(list.size());
     for (const auto& tp : list)
-        histos.push_back(MakeHists(tp.name, tp.title));
+        histos.push_back(MakeHists(tp.name, tp.title, suffix));
     return histos;
 }
 
@@ -346,7 +346,7 @@ void gstReader19()
     auto histos4 = MakeHistoSet(topos4);
     auto histos5 = MakeHistoSet(topos5);
     auto histos6 = MakeHistoSet(topos6);
-
+    auto histos6NoThresh = MakeHistoSet(topos6, "_noTH");
 
     Long64_t nEntries = Root_Tree3->GetEntries();
     map<tuple<int,int,int,int,int,int,int,int>, int> topoCount;
@@ -369,9 +369,27 @@ void gstReader19()
         int nKm = 0;
         int nK0 = 0;
 
+        int nProtonNoThresh = 0;
+        int nNeutronNoThresh = 0;
+        int nPipNoThresh = 0;
+        int nPimNoThresh = 0;
+        int nPi0NoThresh = 0;
+        int nKpNoThresh = 0;
+        int nKmNoThresh = 0;
+        int nK0NoThresh = 0;
+
         for (int j = 0; j < nf; ++j) {
             const bool aboveBaryon = pf[j] > kBaryonMomentumThreshold;
             const bool aboveMeson = pf[j] > kMesonMomentumThreshold;
+
+            if (pdgf[j] == 2212) nProtonNoThresh++;
+            if (pdgf[j] == 2112) nNeutronNoThresh++;
+            if (pdgf[j] == 211)  nPipNoThresh++;
+            if (pdgf[j] == -211) nPimNoThresh++;
+            if (pdgf[j] == 111)  nPi0NoThresh++;
+            if (pdgf[j] == 321)  nKpNoThresh++;
+            if (pdgf[j] == -321) nKmNoThresh++;
+            if (pdgf[j] == 311)  nK0NoThresh++;
 
             if      (pdgf[j] == 2212 && aboveBaryon) nProton++;
             else if (pdgf[j] == 2112 && aboveBaryon) nNeutron++;
@@ -417,6 +435,8 @@ void gstReader19()
         for (size_t t = 0; t < topos6.size(); ++t) {
             if (MatchTopology(topos6[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
                 FillHists(histos6[t], et, theta, Q2, W);
+            if (MatchTopology(topos6[t], nProtonNoThresh, nNeutronNoThresh, nPipNoThresh, nPimNoThresh, nPi0NoThresh, nKpNoThresh, nKmNoThresh, nK0NoThresh))
+                FillHists(histos6NoThresh[t], et, theta, Q2, W);
         }
 
     }
@@ -434,4 +454,6 @@ void gstReader19()
     DrawTopologies(histos5, topos5,"1nN2nK","1nN 2nK", 10, true);
     DrawTopologies(histos6, topos6,"P+pi","P+pi", 10, false);
     DrawTopologies(histos6, topos6,"P+pi","P+pi", 10, true);
+    DrawTopologies(histos6NoThresh, topos6,"P+pi_noTH","P+pi no thresholds", 10, false);
+    DrawTopologies(histos6NoThresh, topos6,"P+pi_noTH","P+pi no thresholds", 10, true);
 }
