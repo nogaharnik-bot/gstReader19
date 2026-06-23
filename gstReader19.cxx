@@ -28,13 +28,13 @@ struct Topology {
     int nKm;
 };
 
-vector<TH1D*> MakeHists(const TString& name, const TString& title)
+vector<TH1D*> MakeHists(const TString& name, const TString& title, const TString& suffix = "")
 {
     return {
-        new TH1D("et_" + name,    title +";Energy Transfer [GeV];Events", 100, 0, 6),
-        new TH1D("theta_" + name, title +";#theta_{e} [rad];Events",      100, 0, 0.5),
-        new TH1D("Q2_" + name,    title +";Q^{2} [GeV^{2}];Events",       100, 0, 1),
-        new TH1D("W_" + name,     title +";W [GeV/c^{2}];Events",         100, 0, 3.5)
+        new TH1D("et_" + name + suffix,    title +";Energy Transfer [GeV];Events", 100, 0, 6),
+        new TH1D("theta_" + name + suffix, title +";#theta_{e} [rad];Events",      100, 0, 0.5),
+        new TH1D("Q2_" + name + suffix,    title +";Q^{2} [GeV^{2}];Events",       100, 0, 1),
+        new TH1D("W_" + name + suffix,     title +";W [GeV/c^{2}];Events",         100, 0, 3.5)
     };
 }
 
@@ -63,12 +63,12 @@ void FillHists(vector<TH1D*>& histos, double et, double theta, double Q2, double
     histos[3]->Fill(W);
 }
 
-vector<vector<TH1D*>> MakeHistoSet(const vector<Topology>& list)
+vector<vector<TH1D*>> MakeHistoSet(const vector<Topology>& list, const TString& suffix = "")
 {
     vector<vector<TH1D*>> histos;
     histos.reserve(list.size());
     for (const auto& tp : list)
-        histos.push_back(MakeHists(tp.name, tp.title));
+        histos.push_back(MakeHists(tp.name, tp.title, suffix));
     return histos;
 }
 
@@ -518,6 +518,8 @@ void gstReader19()
         for (size_t t = 0; t < topos6.size(); ++t) {
             if (MatchTopology(topos6[t], nProton, nNeutron, nPip, nPim, nKp, nKm))
                 FillHists(histos6[t], et, theta, Q2, W);
+            if (MatchTopology(topos6[t], nProtonNoThresh, nNeutronNoThresh, nPipNoThresh, nPimNoThresh, nPi0NoThresh, nKpNoThresh, nKmNoThresh, nK0NoThresh))
+                FillHists(histos6NoThresh[t], et, theta, Q2, W);
         }
 
         for (size_t t = 0; t < topos7.size(); ++t) {
