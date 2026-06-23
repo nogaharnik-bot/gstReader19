@@ -44,7 +44,7 @@ bool MatchTopology(const Topology& tp,
                    int nPip,
                    int nPim,
                    int nKp,
-                   int nKm,)
+                   int nKm)
 {
     if (tp.nProton >= 0 && nProton != tp.nProton) return false;
     if (tp.nNeutron >= 0 && nNeutron != tp.nNeutron) return false;
