@@ -355,7 +355,6 @@ void gstReader19()
 
     // All Topo //
     vector<Topology> topos7 = {
-        {"1p0n0pi",         "1p 0#pi",                    1,  0,   0,   0,   0,  0},
     };
 
     // 1p + 2 pi //
