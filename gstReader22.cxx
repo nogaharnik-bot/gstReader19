@@ -193,11 +193,35 @@ void gstReader19()
     Root_Tree3->SetBranchAddress("qel", &qel);
 
     vector<Topology> topos1 = {
-        {"1p1pip",     "1p 1#pi^{+}",     1, -1,  1, 0, 0,  0, 0, 0},
-        {"1p1pim",     "1p 1#pi^{-}",     1, -1,  0, 1, 0,  0, 0, 0},
-        {"1p1pip1pim", "1p 1#pi^{+} 1#pi^{-}", 1, -1,  1, 1, 0,  0, 0, 0},
-        {"1p2pip2pim", "1p 2#pi^{+} 2#pi^{-}", 1, -1,  2, 2, 0,  0, 0, 0},
-        // "1p1pi" and "1p2pi" cannot be represented by this struct without a total charged-pion field.
+       
+        {"1p0n0pip1pim", "1p 0n 0#pi^{+} 1#pi^{-}", 1, 0, 0, 1, 0, 0, 0, 0},
+        {"1p1n0pip1pim", "1p 1n 0#pi^{+} 1#pi^{-}", 1, 1, 0, 1, 0, 0, 0, 0},
+        {"1p2n0pip1pim", "1p 2n 0#pi^{+} 1#pi^{-}", 1, 2, 0, 1, 0, 0, 0, 0},
+        {"1p0n0pip1pim1kp", "1p 0n 0#pi^{+} 1#pi^{-} 1K^{+}", 1, 0, 0, 1, 0, 1, 0, 0},
+        {"1p0n0pip1pim1k0", "1p 0n 0#pi^{+} 1#pi^{-} 1K^{0}", 1, 0, 0, 1, 0, 0, 0, 1},
+        {"1p3n0pip1pim", "1p 3n 0#pi^{+} 1#pi^{-}", 1, 3, 0, 1, 0, 0, 0, 0},
+        {"1p1n0pip1pim1kp", "1p 1n 0#pi^{+} 1#pi^{-} 1K^{+}", 1, 1, 0, 1, 0, 1, 0, 0},
+        {"1p4n0pip1pim", "1p 4n 0#pi^{+} 1#pi^{-}", 1, 4, 0, 1, 0, 0, 0, 0},
+        {"1p0n0pip1pim1kp1km", "1p 0n 0#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 1, 0, 0, 1, 0, 1, 1, 0},
+        {"1p5n0pip1pim", "1p 5n 0#pi^{+} 1#pi^{-}", 1, 5, 0, 1, 0, 0, 0, 0},
+        {"1p1n0pip1pim1k0", "1p 1n 0#pi^{+} 1#pi^{-} 1K^{0}", 1, 1, 0, 1, 0, 0, 0, 1},
+        {"1p2n0pip1pim1kp", "1p 2n 0#pi^{+} 1#pi^{-} 1K^{+}", 1, 2, 0, 1, 0, 1, 0, 0},
+        {"1p1n0pip1pim1kp1km", "1p 1n 0#pi^{+} 1#pi^{-} 1K^{+} 1K^{-}", 1, 1, 0, 1, 0, 1, 1, 0},
+        {"1p1n1pip", "1p 1n 1#pi^{+}", 1, 1, 1, 0, 0, 0, 0, 0},
+        {"1p2n1pip", "1p 2n 1#pi^{+}", 1, 2, 1, 0, 0, 0, 0, 0},
+        {"1p3n1pip", "1p 3n 1#pi^{+}", 1, 3, 1, 0, 0, 0, 0, 0},
+        {"1p4n1pip", "1p 4n 1#pi^{+}", 1, 4, 1, 0, 0, 0, 0, 0},
+        {"1p5n1pip", "1p 5n 1#pi^{+}", 1, 5, 1, 0, 0, 0, 0, 0},
+        {"1p6n1pip", "1p 6n 1#pi^{+}", 1, 6, 1, 0, 0, 0, 0, 0},
+        {"1p1n1pip1k0", "1p 1n 1#pi^{+} 1K^{0}", 1, 1, 1, 0, 0, 0, 0, 1},
+        {"1p0n1pip1k0", "1p 0n 1#pi^{+} 1K^{0}", 1, 0, 1, 0, 0, 0, 0, 1},
+        {"1p7n1pip", "1p 7n 1#pi^{+}", 1, 7, 1, 0, 0, 0, 0, 0},
+        {"1p2n1pip1k0", "1p 2n 1#pi^{+} 1K^{0}", 1, 2, 1, 0, 0, 0, 0, 1},
+        {"1p0n1pip1km1k0", "1p 0n 1#pi^{+} 1K^{-} 1K^{0}", 1, 0, 1, 0, 0, 0, 1, 1},
+        {"1p1n1pip1kp1km", "1p 1n 1#pi^{+} 1K^{+} 1K^{-}", 1, 1, 1, 0, 0, 1, 1, 0},
+        {"1p2n1pip1kp1km", "1p 2n 1#pi^{+} 1K^{+} 1K^{-}", 1, 2, 1, 0, 0, 1, 1, 0},
+        {"1p3n1pip1k0", "1p 3n 1#pi^{+} 1K^{0}", 1, 3, 1, 0, 0, 0, 0, 1},
+        {"1p2n1pip1kp", "1p 2n 1#pi^{+} 1K^{+}", 1, 2, 1, 0, 0, 1, 0, 0}
     };
 
 
@@ -252,8 +276,7 @@ void gstReader19()
             if (MatchTopology(topos1[t], nProton, nNeutron, nPip, nPim, nPi0, nKp, nKm, nK0))
                 FillHists(histos1[t], et, theta, Q2, W);
         }
-
-    
+    }
 
     DrawTopologies(histos1, topos1,"p+pi","p+pi (w/threshholds)", 10, false);
     DrawTopologies(histos1, topos1,"p+pi","p+pi (w/threshholds)", 10, true);

@@ -1,3 +1,5 @@
+// root -l -b -q gstReader19.cxx
+
 #include <TFile.h>
 #include <TTree.h>
 #include <TChain.h>
