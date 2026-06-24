@@ -34,7 +34,7 @@ struct Topology {
 vector<TH1D*> MakeHists(const TString& name, const TString& title)
 {
     return {
-        new TH1D("et_" + name,    title +";Energy Transfer [GeV];Events", 100, 0, 6),
+        new TH1D("et_" + name,    title +";Energy Transfer [GeV];Events", 100, 0, 2),
         new TH1D("theta_" + name, title +";#theta_{e} [rad];Events",      100, 0, 0.5),
         new TH1D("Q2_" + name,    title +";Q^{2} [GeV^{2}];Events",       100, 0, 1),
         new TH1D("W_" + name,     title +";W [GeV/c^{2}];Events",         100, 0, 3.5)
