@@ -575,9 +575,3 @@ void gstReader19()
     DrawTopologies(histos10, topos10,"1nKp1nKm","1nK^{+} 1nK^{-}", 10, false, "6GeV");
     DrawTopologies(histos10, topos10,"1nKp1nKm","1nK^{+} 1nK^{-}", 10, true, "6GeV");
 }
-
-int main(int argc, char** argv)
-{
-    gstReader19();
-    return 0;
-}
