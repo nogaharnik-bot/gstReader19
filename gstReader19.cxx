@@ -149,7 +149,7 @@ void gstReader19()
     // Create 4GeV output directory
     gSystem->Exec("mkdir -p 4GeV");
     
-    const string File_Path = const string File_Path = "/pnfs/genie/persistent/users/asportes/2N_Analysis_Samples/C12/GEM21_11a_00_000/4029MeV_Q2_0_25/master-routine_validation_01-eScattering/";
+    const string File_Path = "/pnfs/genie/persistent/users/asportes/2N_Analysis_Samples/C12/GEM21_11a_00_000/4029MeV_Q2_0_25/master-routine_validation_01-eScattering/";
     const string File_TTree_Name = "gst";
     const vector<string> File_Names = {
         "e_on_1000060120_4029MeV_*.gst.root"
