@@ -146,10 +146,10 @@ void DrawTopologies(const vector<vector<TH1D*>>& histos,
 
 void gstReader19()
 {
-    // Create 6GeV output directory
+    // Create 2GeV output directory
     gSystem->Exec("mkdir -p 2GeV");
     
-    const string File_Path = "/pnfs/genie/persistent/users/asportes/2N_Analysis_Samples/C12/GEM21_11a_00_000/5986MeV_Q2_0_40/master-routine_validation_01-eScattering/";
+    const string File_Path = "/pnfs/genie/persistent/users/asportes/2N_Analysis_Samples/C12/GEM21_11a_00_000/2070MeV_Q2_0_02/master-routine_validation_01-eScattering/";
     const string File_TTree_Name = "gst";
     const vector<string> File_Names = {
         "e_on_1000060120_2070MeV_*.gst.root",
