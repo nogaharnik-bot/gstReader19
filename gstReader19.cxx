@@ -176,13 +176,17 @@ void gstReader19()
     Root_Tree3->SetBranchStatus("cthl", 1);
     Root_Tree3->SetBranchStatus("ni", 1);
     Root_Tree3->SetBranchStatus("pdgi", 1);
-    Root_Tree3->SetBranchStatus("pi", 1);
+    Root_Tree3->SetBranchStatus("pxi", 1);
+    Root_Tree3->SetBranchStatus("pyi", 1);
+    Root_Tree3->SetBranchStatus("pzi", 1);
     Root_Tree3->SetBranchStatus("qel", 1);
 
     int ni = 0;
     const int kMax = 200;
     int pdgi[kMax];
-    double pi[kMax];
+    double pxi[kMax];
+    double pyi[kMax];
+    double pzi[kMax];
     double gst_Ev = 0.0;
     double gst_El = 0.0;
     double cthl = 0.0;
@@ -196,7 +200,9 @@ void gstReader19()
     Root_Tree3->SetBranchAddress("cthl", &cthl);
     Root_Tree3->SetBranchAddress("ni", &ni);
     Root_Tree3->SetBranchAddress("pdgi", pdgi);
-    Root_Tree3->SetBranchAddress("pi", pi);
+    Root_Tree3->SetBranchAddress("pxi", pxi);
+    Root_Tree3->SetBranchAddress("pyi", pyi);
+    Root_Tree3->SetBranchAddress("pzi", pzi);
     Root_Tree3->SetBranchAddress("qel", &qel);
 
     // 1kp //
@@ -476,8 +482,9 @@ void gstReader19()
         int nKm = 0;
 
         for (int j = 0; j < ni; ++j) {
-            const bool aboveBaryon = pi[j] > kBaryonMomentumThreshold;
-            const bool aboveMeson = pi[j] > kMesonMomentumThreshold;
+        double pmag = TMath::Sqrt(pxi[j]*pxi[j] + pyi[j]*pyi[j] + pzi[j]*pzi[j]);
+            const bool aboveBaryon = pmag > kBaryonMomentumThreshold;
+            const bool aboveMeson = pmag > kMesonMomentumThreshold;
 
             if      (pdgi[j] == 2212 && aboveBaryon) nProton++;
             else if (pdgi[j] == 2112 && aboveBaryon) nNeutron++;
