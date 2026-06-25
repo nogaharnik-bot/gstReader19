@@ -147,7 +147,7 @@ void DrawTopologies(const vector<vector<TH1D*>>& histos,
 void gstReader19()
 {
     // Create 6GeV output directory
-    gSystem->Exec("mkdir -p 6GeV(ni)");
+    gSystem->Exec("mkdir -p 6GeV_ni");
     
     const string File_Path = "/pnfs/genie/persistent/users/asportes/2N_Analysis_Samples/C12/GEM21_11a_00_000/5986MeV_Q2_0_40/master-routine_validation_01-eScattering/";
     const string File_TTree_Name = "gst";
@@ -559,26 +559,26 @@ void gstReader19()
     }
     
 
-    DrawTopologies(histos1, topos1,"1nKp(ni)","1nK^{+} (ni)", 10, false, "6GeV(ni)");
-    DrawTopologies(histos1, topos1,"1nKp(ni)","1nK^{+} (ni)", 10, true, "6GeV(ni)");
-    DrawTopologies(histos2, topos2,"1nP1nK(ni)","1nP 1nK(ni)", 10, false, "6GeV(ni)");
-    DrawTopologies(histos2, topos2,"1nP1nK(ni)","1nP 1nK(ni)", 10, true, "6GeV(ni)");
-    DrawTopologies(histos3, topos3,"1nP2nK(ni)","1nP 2nK(ni)", 10, false, "6GeV(ni)");
-    DrawTopologies(histos3, topos3,"1nP2nK(ni)","1nP 2nK(ni)", 10, true, "6GeV(ni)");
-    DrawTopologies(histos4, topos4,"1nN1nK(ni)","1nN 1nK(ni)", 10, false, "6GeV(ni)");
-    DrawTopologies(histos4, topos4,"1nN1nK(ni)","1nN 1nK(ni)", 10, true, "6GeV(ni)");
-    DrawTopologies(histos5, topos5,"1nN2nK(ni)","1nN 2nK(ni)", 10, false, "6GeV(ni)");
-    DrawTopologies(histos5, topos5,"1nN2nK(ni)","1nN 2nK(ni)", 10, true, "6GeV(ni)");
-    DrawTopologies(histos6, topos6,"1nP1npi(ni)","1nP 1n#pi(ni)", 10, false, "6GeV(ni)");
-    DrawTopologies(histos6, topos6,"1nP1npi(ni)","1nP 1n#pi(ni)", 10, true, "6GeV(ni)");
-    DrawTopologies(histos11, topos11,"AllTopologies(ni)","All Topologies(ni)", 10, false, "6GeV(ni)");
-    DrawTopologies(histos11, topos11,"AllTopologies(ni)","All Topologies(ni)", 10, true, "6GeV(ni)");
-    DrawTopologies(histos11_qel, topos11,"AllTopologies_QEL(ni)","All Topologies (QEL only)(ni)", 10, false, "6GeV(ni)");
-    DrawTopologies(histos11_qel, topos11,"AllTopologies_QEL(ni)","All Topologies (QEL only)(ni)", 10, true, "6GeV(ni)");
-    DrawTopologies(histos8, topos8,"1nP2npi(ni)","1nP 2n#pi(ni)", 10, false, "6GeV(ni)");
-    DrawTopologies(histos8, topos8,"1nP2npi(ni)","1nP 2n#pi(ni)", 10, true, "6GeV(ni)");
-    DrawTopologies(histos9, topos9,"1nKm(ni)","1nK^{-}(ni)", 10, false, "6GeV(ni)");
-    DrawTopologies(histos9, topos9,"1nKm(ni)","1nK^{-}(ni)", 10, true, "6GeV(ni)");
-    DrawTopologies(histos10, topos10,"1nKp1nKm(ni)","1nK^{+} 1nK^{-}(ni)", 10, false, "6GeV(ni)");
-    DrawTopologies(histos10, topos10,"1nKp1nKm(ni)","1nK^{+} 1nK^{-}(ni)", 10, true, "6GeV(ni)");
+    DrawTopologies(histos1, topos1,"1nKp_ni","1nK^{+} _ni", 10, false, "6GeV_ni");
+    DrawTopologies(histos1, topos1,"1nKp_ni","1nK^{+} _ni", 10, true, "6GeV_ni");
+    DrawTopologies(histos2, topos2,"1nP1nK_ni","1nP 1nK_ni", 10, false, "6GeV_ni");
+    DrawTopologies(histos2, topos2,"1nP1nK_ni","1nP 1nK_ni", 10, true, "6GeV_ni");
+    DrawTopologies(histos3, topos3,"1nP2nK_ni","1nP 2nK_ni", 10, false, "6GeV_ni");
+    DrawTopologies(histos3, topos3,"1nP2nK_ni","1nP 2nK_ni", 10, true, "6GeV_ni");
+    DrawTopologies(histos4, topos4,"1nN1nK_ni","1nN 1nK_ni", 10, false, "6GeV_ni");
+    DrawTopologies(histos4, topos4,"1nN1nK_ni","1nN 1nK_ni", 10, true, "6GeV_ni");
+    DrawTopologies(histos5, topos5,"1nN2nK_ni","1nN 2nK_ni", 10, false, "6GeV_ni");
+    DrawTopologies(histos5, topos5,"1nN2nK_ni","1nN 2nK_ni", 10, true, "6GeV_ni");
+    DrawTopologies(histos6, topos6,"1nP1npi_ni","1nP 1n#pi_ni", 10, false, "6GeV_ni");
+    DrawTopologies(histos6, topos6,"1nP1npi_ni","1nP 1n#pi_ni", 10, true, "6GeV_ni");
+    DrawTopologies(histos11, topos11,"AllTopologies_ni","All Topologies_ni", 10, false, "6GeV_ni");
+    DrawTopologies(histos11, topos11,"AllTopologies_ni","All Topologies_ni", 10, true, "6GeV_ni");
+    DrawTopologies(histos11_qel, topos11,"AllTopologies_QEL_ni","All Topologies (QEL only)_ni", 10, false, "6GeV_ni");
+    DrawTopologies(histos11_qel, topos11,"AllTopologies_QEL_ni","All Topologies (QEL only)_ni", 10, true, "6GeV_ni");
+    DrawTopologies(histos8, topos8,"1nP2npi_ni","1nP 2n#pi_ni", 10, false, "6GeV_ni");
+    DrawTopologies(histos8, topos8,"1nP2npi_ni","1nP 2n#pi_ni", 10, true, "6GeV_ni");
+    DrawTopologies(histos9, topos9,"1nKm_ni","1nK^{-}_ni", 10, false, "6GeV_ni");
+    DrawTopologies(histos9, topos9,"1nKm_ni","1nK^{-}_ni", 10, true, "6GeV_ni");
+    DrawTopologies(histos10, topos10,"1nKp1nKm_ni","1nK^{+} 1nK^{-}_ni", 10, false, "6GeV_ni");
+    DrawTopologies(histos10, topos10,"1nKp1nKm_ni","1nK^{+} 1nK^{-}_ni", 10, true, "6GeV_ni");
 }
