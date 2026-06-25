@@ -475,7 +475,7 @@ void gstReader19()
         int nKp = 0;
         int nKm = 0;
 
-        for (int j = 0; j < nf; ++j) {
+        for (int j = 0; j < ni; ++j) {
             const bool aboveBaryon = pi[j] > kBaryonMomentumThreshold;
             const bool aboveMeson = pi[j] > kMesonMomentumThreshold;
 
