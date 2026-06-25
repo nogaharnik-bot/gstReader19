@@ -146,7 +146,7 @@ void DrawTopologies(const vector<vector<TH1D*>>& histos,
 
 void gstReader19()
 {
-    // Create 4GeV output directory
+    // Create 6GeV output directory
     gSystem->Exec("mkdir -p 6GeV(ni)");
     
     const string File_Path = "/pnfs/genie/persistent/users/asportes/2N_Analysis_Samples/C12/GEM21_11a_00_000/5986MeV_Q2_0_40/master-routine_validation_01-eScattering/";
@@ -179,10 +179,10 @@ void gstReader19()
     Root_Tree3->SetBranchStatus("pi", 1);
     Root_Tree3->SetBranchStatus("qel", 1);
 
-    int nf = 0;
+    int ni = 0;
     const int kMax = 200;
-    int pdgf[kMax];
-    double pf[kMax];
+    int pdgi[kMax];
+    double pi[kMax];
     double gst_Ev = 0.0;
     double gst_El = 0.0;
     double cthl = 0.0;
